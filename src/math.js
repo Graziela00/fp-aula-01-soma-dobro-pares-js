@@ -9,6 +9,10 @@
  */
 function somaDobroNumerosParesFuncional(numeros){
     // TODO: Insira seu código funcional aqui
+        return numeros
+        .filter(numero => numero % 2 === 0)  // Filtra os números pares
+        .map(numero => numero * 2)           // Dobra os números filtrados
+        .reduce((soma, numero) => soma + numero, 0); // Soma os valores
 }
 
 /**
@@ -18,6 +22,13 @@ function somaDobroNumerosParesFuncional(numeros){
  */
 function somaDobroNumerosParesProcedural(numeros){
     // TODO: Insira seu código estruturado aqui   
+    let somaDobroPares = 0;
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            somaDobroPares += numeros[i] * 2;
+        }
+    }
+    return  somaDobroPares ;
 }
 
 export { somaDobroNumerosParesFuncional, somaDobroNumerosParesProcedural };
